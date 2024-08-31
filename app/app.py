@@ -54,15 +54,16 @@ def predict():
         elif ca is None:
             return jsonify({'error': 'Missing ca data'})
         elif thal is None:
-            return jsonify({'error': 'Missing Thal data'})
+            return jsonify({'error': 'Missing thal data'})
 
         # Convert form data to model input
         data = [float(age), float(sex), float(cp), float(trestbps), float(chol), float(fbs), float(restecg), float(thalach), float(exang), float(oldpeak), float(slope), float(ca), float(thal)]
-        data = np.array(data).reshape(1, -1)
+        data = [np.array(data)]
         
         # Make prediction
         prediction = model.predict(data)
         
+        #return render_template("index.html", pred= prediction)
         return render_template("index.html", pred = "Your Heart is Happy" if prediction[0] == 0 else "Likelihood of Heart Problem")
     except Exception as e:
         return jsonify({'error': str(e)}), 500
