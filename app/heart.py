@@ -48,7 +48,7 @@ class HeartDiseaseDiagnosis:
         # Example preprocessing function
         X = self.heart.drop('target', axis=1)
         y = self.heart['target']
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=42)
         return X_train, X_test, y_train, y_test
 
     def Diagnosis(self,X_test):
