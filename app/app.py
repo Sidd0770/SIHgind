@@ -54,10 +54,10 @@ def predict():
         elif ca is None:
             return jsonify({'error': 'Missing ca data'})
         elif thal is None:
-            return jsonify({'error': 'Missing sex data'})
+            return jsonify({'error': 'Missing thal data'})
 
         # Convert form data to model input
-        data = [float(age), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex), float(sex)]
+        data = [float(age), float(sex), float(cp), float(trestbps), float(chol), float(fbs), float(restecg), float(thalach), float(exang), float(oldpeak), float(slope), float(ca), float(thal)]
         data = np.array(data).reshape(1, -1)
         
         # Make prediction
