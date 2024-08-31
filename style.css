@@ -3,18 +3,37 @@
     width: 100%;;
     text-align: center;
     perspective: 10px;
+    display:flex;
+    justify-content: center;
+    padding-top: 5px;
     
 }
 body{
-    background-image:url("/images/Designer.jpeg");
+    margin:0;
+    padding:0;
+    background-image:url("/images/Designer.jpeg") ;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    height:100%;
+
+    
     
 }
+h1{
+    text-align: center;
+}
 .container{
-    width:100;
-    height:100vh;
+    width:80vh;
+    height:50vh;
+    margin:2px;
+    padding:20px;
     display: flex;
     align-content: center;
+    align-items:center;
     justify-content: center;
+    justify-items: space-evenly;
     align-items: start;
-
+    border:solid black 2px;
 }
