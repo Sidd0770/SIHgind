@@ -29,6 +29,7 @@ rf=RandomForestClassifier(criterion='entropy',max_depth=1)
 data = rf.fit(X_train,y_train)
 
 pickle.dump(data, open('app/model.pkl', 'wb'))
+model = pickle.load(open('app/model.pkl','rb'))
  
 # Creating a function for the user
 
