@@ -23,7 +23,7 @@ def predict():
         fbs = request.form.get("fbs")
         restecg = request.form.get("restecg")
         thalach = request.form.get("thalach")
-        exang = request.form.get("age")
+        exang = request.form.get("exang")
         oldpeak = request.form.get("oldpeak")
         slope = request.form.get("slope")
         ca = request.form.get("ca")

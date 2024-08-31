@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthCare</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .pred-center {
-            text-align: center;
-            font-weight: bold;
-        }
-    </style>
+
 </head>
 <body >
     <h1 >Heart Disease</h1>
     <div class="wrapper">
         <!-- <h1>HeartDisease</h1> -->
+        <div>
+            
+        </div>
         <div class="container">
             <form action = "/predict" method = "post">
                 <table class="table">
@@ -67,10 +65,11 @@
                     </tr>
                     
                     
-                    <tr class="csvFile">
+                    <!--<tr class="csvFile">
                         <td>FILE INPUT</td>
                         <td><input type="file"></td>
                     </tr>
+                        -->
 
                     <tr>
                         <td><button type="submit" class="button">PREDICT</button></td>

@@ -11,15 +11,13 @@
 body{
     margin:0;
     padding:0;
-    background-image:url("images/Designer.jpeg") ;
+    background-image:url("./images/Designer.jpeg") ;
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
     background-attachment:fixed ;
     /*height:100%; */
     /* background-color: white; */
-
-    
     
 }
 h1{
@@ -48,7 +46,8 @@ table{
     font-weight:bold;
 }
 
-/* .csvFile{
-     text-align:center; 
-
-}*/
+.button{
+    padding:5rem;
+    margin:5rem;
+    align-items: center;
+}
