@@ -23,7 +23,7 @@ def predict():
         fbs = request.form.get("fbs")
         restecg = request.form.get("restecg")
         thalach = request.form.get("thalach")
-        exang = request.form.get("age")
+        exang = request.form.get("exang")
         oldpeak = request.form.get("oldpeak")
         slope = request.form.get("slope")
         ca = request.form.get("ca")
@@ -58,11 +58,12 @@ def predict():
 
         # Convert form data to model input
         data = [float(age), float(sex), float(cp), float(trestbps), float(chol), float(fbs), float(restecg), float(thalach), float(exang), float(oldpeak), float(slope), float(ca), float(thal)]
-        data = np.array(data).reshape(1, -1)
+        data = [np.array(data)]
         
         # Make prediction
         prediction = model.predict(data)
         
+        #return render_template("index.html", pred= prediction)
         return render_template("index.html", pred = "Your Heart is Happy" if prediction[0] == 0 else "Likelihood of Heart Problem")
     except Exception as e:
         return jsonify({'error': str(e)}), 500
