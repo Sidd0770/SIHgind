@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .pred-center {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body >
+    <h1 >Heart Disease</h1>
+    <div class="wrapper">
+        <!-- <h1>HeartDisease</h1> -->
+        <div class="container">
+            <form action = "/predict" method = "post">
+                <table class="table">
+                    <tr>
+                        <td>age</td>
+                        <td class="td"><input type="number" name="age"></td>
+                    
+                        <td>sex</td>
+                        <td class="td"><input type="number" name="sex"></td>
+                    </tr>
+                    <tr>
+                        <td>cp</td> 
+                        <td class="td"><input type="number" name="cp"></td>
+                    
+                        <td> trestbps</td> 
+                        <td class="td"><input type="number" name="trestbps"></td>
+                    </tr>
+                    <tr> 
+                        <td>chol</td>
+                        <td class="td"><input type="number" name="chol"></td>
+                        <!-- <td></td> -->
+                        <td>fbs</td>
+                        <td class="td"><input type="number" name="fbs"></td>
+                    </tr>
+                    <tr>
+                        <td>restecg</td>
+                        <td class="td"><input type="number" name="restecg"></td>
+                    
+                        <td>thalach</td>
+                        <td class="td"><input type="number" name="thalach"></td>
+                    </tr>
+                    <tr>
+                        <td>exang</td>
+                        <td class="td"><input type="number" name="exang"></td>
+                    
+                        <td>oldpeak</td>
+                        <td class="td"><input type="number" name="oldpeak" step= "any"></td>
+                    </tr>
+                    <tr>
+                        <td>slope</td>
+                        <td class="td"><input type="number" name="slope"></td>
+                    
+                        <td>ca</td>
+                        <td class="td"><input type="number" name="ca"></td>
+                    </tr>
+                    <tr>
+                        <td>thal</td>
+                        <td class="td"><input type="number" name="thal"></td>
+                    </tr>
+                    
+                    
+                    <tr class="csvFile">
+                        <td>FILE INPUT</td>
+                        <td><input type="file"></td>
+                    </tr>
+
+                    <tr>
+                        <td><button type="submit" class="button">PREDICT</button></td>
+                    </tr>
+
+                    <tr>
+                        <br>
+                        <td style="color:rgb(3, 251, 148); ">{{pred}}<td>
+                        <br>
+                    </tr>
+
+                </table>
+
+            </form>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

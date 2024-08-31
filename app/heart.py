@@ -5,8 +5,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics  import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
+import pickle
 
-heart=pd.read_csv('heart.csv')
+heart=pd.read_csv('app/heart.csv')
 
 #X->model data y->output of that particular row
 X=heart.iloc[:,:13]
@@ -19,20 +20,22 @@ X_scale=scaler.fit_transform(X)
 #splittting the train and testing data
 X_train,X_test,y_train,y_test = train_test_split(X_scale,
                                                 y,
-                                                test_size=0.3,
+                                                test_size=0.1,
                                                 random_state=42)
 
 
 #random forest classifier
 rf=RandomForestClassifier(criterion='entropy',max_depth=1)
-rf.fit(X_train,y_train)
+data = rf.fit(X_train,y_train)
+
+pickle.dump(data, open('app/model.pkl', 'wb'))
  
 # Creating a function for the user
 
 class HeartDiseaseDiagnosis:
     def __init__(self):
         # Load data and initialize variables
-        self.heart = pd.read_csv('heart.csv')
+        self.heart = pd.read_csv('app/heart.csv')
         self.scaler = StandardScaler()
         self.rf = RandomForestClassifier()
         self.X_train, self.X_test, self.y_train, self.y_test = self.preprocess_data()
@@ -45,7 +48,7 @@ class HeartDiseaseDiagnosis:
         # Example preprocessing function
         X = self.heart.drop('target', axis=1)
         y = self.heart['target']
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=42)
         return X_train, X_test, y_train, y_test
 
     def Diagnosis(self,X_test):

@@ -11,12 +11,14 @@
 body{
     margin:0;
     padding:0;
-    background-image:url("/images/Designer.jpeg") ;
+    background-image:url("images/Designer.jpeg") ;
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
     background-attachment:fixed ;
-   
+    /*height:100%; */
+    /* background-color: white; */
+
     
     
 }
@@ -45,7 +47,8 @@ table{
     opacity:1;
     font-weight:bold;
 }
-.csvFile{
-    /* text-align:center; */
 
-}
+/* .csvFile{
+     text-align:center; 
+
+}*/
