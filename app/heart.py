@@ -20,7 +20,7 @@ X_scale=scaler.fit_transform(X)
 #splittting the train and testing data
 X_train,X_test,y_train,y_test = train_test_split(X_scale,
                                                 y,
-                                                test_size=0.1,
+                                                test_size=0.05,
                                                 random_state=42)
 
 
@@ -38,7 +38,7 @@ class HeartDiseaseDiagnosis:
         # Load data and initialize variables
         self.heart = pd.read_csv('app/heart.csv')
         self.scaler = StandardScaler()
-        self.rf = RandomForestClassifier()
+        self.rf = RandomForestClassifier(criterion= 'entropy')
         self.X_train, self.X_test, self.y_train, self.y_test = self.preprocess_data()
         self.y_pred = None
 
