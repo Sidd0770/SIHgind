@@ -38,6 +38,7 @@ h1{
     justify-content: center;
     justify-items: space-evenly;
     align-items: start;
+    align-self:center;
     
 }
 
@@ -47,8 +48,48 @@ table{
 }
 
 .button{
-    padding:1rem;
-    margin:1rem;
+    width:7rem;
+    height:2rem;
+    color:black;
+    text-align: center;
+    align-content: center;
+    background-color:rgb(85, 192, 199);
+    font-size: 18px;
+    cursor: pointer;
+    /* box-shadow: 5px 4px 11px 1px rgb(191, 188, 188); */
+
+    animation-name:blak;
+    animation-duration:3s;
+    animation-delay: 1s;
+    animation-iteration-count: 5;
+    animation-timing-function: ease;
+    z-index: 1;
+    position: relative;
+    border-radius: 4px;
+
+}
+.button:hover::before{
+    transform: scaleX(1);
+}
+
+.button::before{
+    content: "";
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    position:absolute;
+    z-index: -1;
+    background-color:rgb(158, 231, 236);
+    transform: scaleX(0);
+    transition: all 0.8s;
+    transform-origin: left;
+
+}
+
+.buttonTr{
+    display:flex;
+    justify-content: center;
     align-items: center;
-    align-self: center;
+    color:black
 }

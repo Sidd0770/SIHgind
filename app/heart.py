@@ -25,7 +25,7 @@ X_train,X_test,y_train,y_test = train_test_split(X_scale,
 
 
 #random forest classifier
-rf=RandomForestClassifier(criterion='entropy',max_depth=1)
+rf=RandomForestClassifier(criterion='entropy',max_depth=3)
 data = rf.fit(X_train,y_train)
 
 pickle.dump(data, open('app/model.pkl', 'wb'))
@@ -58,7 +58,8 @@ class HeartDiseaseDiagnosis:
         # Make predictions
         self.y_pred = self.rf.predict(X_test_scaled)
         # Print the accuracy score
-        print('accuracy_score:', accuracy_score(self.y_pred, self.y_test))
+        # print('accuracy_score:', accuracy_score(self.y_pred, self.y_test))
+        print(self.y_pred)
 
     def getData(self):
         # Print the predictions
