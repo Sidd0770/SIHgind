@@ -66,6 +66,7 @@ def predict():
         #return render_template("index.html", pred= prediction)
         return render_template("index.html", pred = "Your Heart is Happy" if prediction[0] == 0 else "Likelihood of Heart Problem")
     except Exception as e:
+        
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
