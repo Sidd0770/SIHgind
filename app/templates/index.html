@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthCare</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .pred-center{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
 
 </head>
 <body >
@@ -19,32 +25,60 @@
                         <td class="td"><input type="number" name="age" required></td>
                     
                         <td>Sex</td>
-                        <td class="td"><input type="number" name="sex" required></td>
+                        <td class="td">
+                            <select name="sex" required>
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td>CP</td> 
-                        <td class="td"><input type="number" name="cp" required></td>
+                        <td>CP type</td> 
+                        <td class="td">
+                            <select name="cp" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
                     
-                        <td> Trestbps</td> 
+                        <td> Trest BPS</td> 
                         <td class="td"><input type="number" name="trestbps" required></td>
                     </tr>
                     <tr> 
-                        <td>Chol</td>
+                        <td>Chol(mg/dl)</td>
                         <td class="td"><input type="number" name="chol" required></td>
                         <!-- <td></td> -->
                         <td>FBS</td>
-                        <td class="td"><input type="number" name="fbs" required></td>
+                        <td class="td">
+                            <select name="fbs" required>
+                                <option value="1"> > 120mg/dl </option>
+                                <option value="0"> <= 120 mg/dl</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Restecg</td>
-                        <td class="td"><input type="number" name="restecg" required></td>
+                        <td>Rest ECG</td>
+                        <td class="td">
+                            <select name="restecg" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </td>
                     
                         <td>Thalach</td>
                         <td class="td"><input type="number" name="thalach" required></td>
                     </tr>
                     <tr>
                         <td>Exang</td>
-                        <td class="td"><input type="number" name="exang" required></td>
+                        <td class="td">
+                            <select name="exang" required>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
                     
                         <td>Oldpeak</td>
                         <td class="td"><input type="number" name="oldpeak" step= "any" required></td>
@@ -54,11 +88,23 @@
                         <td class="td"><input type="number" name="slope" required></td>
                     
                         <td>Ca</td>
-                        <td class="td"><input type="number" name="ca" required></td>
+                        <td class="td">
+                            <select name="ca" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Thal</td>
-                        <td class="td"><input type="number" name="thal" required></td>
+                        <td class="td">
+                            <select name="thal" required>
+                                <option value="0">Normal</option>
+                                <option value="1">Fixed Defect</option>
+                                <option value="2">Reversable Defect</option>
+                            </select>
+                        </td>
                     </tr>
                         
 
@@ -68,7 +114,7 @@
 
                     <tr>
                         <br>
-                        <td style="color:black; ">{{pred}}<td>
+                        <td style="color:black; " >{{pred}}<td>
                         <br>
                     </tr>
 
